@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './EmailList.css';
 import {Checkbox,IconButton} from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
