@@ -11,12 +11,16 @@ import WatchLaterIcon from '@material-ui/icons/WatchLater';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import LabelImportantOutlinedIcon from '@material-ui/icons/LabelImportantOutlined';
 import MoreVertOutlinedIcon from '@material-ui/icons/MoreVertOutlined';
+import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
+import PrintOutlinedIcon from '@material-ui/icons/PrintOutlined';
+import UnfoldMoreOutlinedIcon from '@material-ui/icons/UnfoldMoreOutlined';
 function Mail() {
+  const history = useHistory();
   return (
     <div className = "mail">
     <div className = "mail_tools">
       <div className = "mail_toolsLeft">
-       <IconButton>
+       <IconButton onClick = {() => {history.push("/")}}>
          <ArrowBackIcon />
        </IconButton>
        <IconButton >
@@ -45,7 +49,15 @@ function Mail() {
        </IconButton>
       </div>
       <div className = "mail_toolsRight">
-        
+      <IconButton >
+         <UnfoldMoreOutlinedIcon />
+       </IconButton>
+       <IconButton >
+         <PrintOutlinedIcon />
+       </IconButton>
+       <IconButton >
+         <ExitToAppOutlinedIcon />
+       </IconButton>
       </div>
     </div>
     </div>
