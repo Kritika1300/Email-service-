@@ -32,21 +32,21 @@ function EmailList() {
         </div>
     </div>
     <div className = "emailList_sections">
-    <Section Icon = {InboxIcon} title = "primary" color="red" selected />
+    <Section Icon = {InboxIcon} title = "Primary" color="red" selected />
     <Section Icon = {PeopleIcon} title = "Social" color="#1A73E8" />
     <Section Icon = {LocalOfferIcon} title = "Promotions" color="green" />
     </div>
     <div className = "emailList_List">
     <EmailRow 
-      title = "Twitch"
+      title = "Kritika"
       subject = "Hey fellow streamer !!!!"
-      description = "This is DOPE"
+      description = "This is a test mail"
       time = "10pm"
     />
     <EmailRow 
-      title = "Twitch"
+      title = "Himani Chaudhary"
       subject = "Hey fellow streamer!!!!"
-      description = "This is a test"
+      description = "This is a test mail"
       time = "10pm"
     />
     </div>

@@ -1,4 +1,4 @@
-import { Checkbox, IconButton, Popover } from '@material-ui/core';
+import { Checkbox, IconButton} from '@material-ui/core';
 import React from 'react';
 import './EmailRow.css';
 import LabelImportantOutlinedIcon from '@material-ui/icons/LabelImportantOutlined';

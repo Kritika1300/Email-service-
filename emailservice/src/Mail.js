@@ -60,6 +60,17 @@ function Mail() {
        </IconButton>
       </div>
     </div>
+    <div className = "mail_body">
+      <div className = "mail_bodyHeader">
+        <h2>Subject</h2>
+        <LabelImportantOutlinedIcon className = "mail_important"/>
+        <p>Title</p>
+        <p className = "mail_time">Time</p>
+      </div>
+      <div className = "mail_message">
+        <p>This is a message</p>
+      </div>
+    </div>
     </div>
   );
 }
