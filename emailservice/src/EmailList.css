@@ -20,3 +20,11 @@
     background-color: white;
     z-index: 999;
 }
+.emailList_list{
+    padding-bottom: 20%;
+}
+/*Hide scroll bar*/
+.emailList{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
