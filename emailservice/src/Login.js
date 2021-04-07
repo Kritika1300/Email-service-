@@ -3,6 +3,7 @@ import { auth, provider } from './firebase';
 import {Button} from "@material-ui/core";
 import './Login.css';
 import { useDispatch } from 'react-redux';
+import { login } from './features/userSlice';
 function Login() {
   const dispatch = useDispatch();
   const signIn = () => {
