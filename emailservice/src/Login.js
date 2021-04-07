@@ -12,7 +12,7 @@ function Login() {
        dispatch(login({
          displayName:user.displayName,
          email: user.email,
-         photoUrl: user.photoUrl
+         photoUrl: user.photoURL,
        }))
     })
     .catch(error => alert(error.message));
