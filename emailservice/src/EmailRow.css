@@ -6,6 +6,8 @@
     cursor: pointer;
     z-index: 999;
     margin-bottom: 2px;
+    color: #9DA7B3;
+    padding: 0px 15px;
 
 }
 .emailRow:hover{
@@ -18,7 +20,7 @@
     display: flex;
     flex: 0.8;
     align-items: center;
-    font-size: 13px;
+    font-size: 15px;
 }
 .emailRow_message > h4{
     width: 400px;
@@ -27,15 +29,17 @@
     text-overflow: ellipsis;
     padding-left: 5px;
     padding-right: 5px;
+    font-weight: 400;
 }
 .emailRow_title{
-    font-size: 13px;
+    font-size: 16px;
     flex: 0.3;
+    font-weight: 500;
 }
 .emailRow_time {
     padding-right: 15px;
-    font-size: 9px;
-    font-weight: bold;
+    font-size: 12px !important;
+    color: gray;
 }
 .emailRow_description{
     font-weight: 400;

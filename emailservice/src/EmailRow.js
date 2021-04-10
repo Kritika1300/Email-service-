@@ -35,7 +35,7 @@ function EmailRow({ id, title, subject, description, time }) {
         </span>
       </h4>
     </div>
-    <p onClick = {openMail} className="emailRow_description"> {time}
+    <p onClick = {openMail} className="emailRow_time"> {new Date(time).toDateString()}
     </p>
   </div>
 
