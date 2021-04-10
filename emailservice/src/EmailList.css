@@ -1,23 +1,30 @@
 .emailList{
     flex: 1;
-    overflow: scroll;
+    overflow: auto;
+    background-color: #2D333B;
 }
 .emailList_settings{
     position: sticky;
     top: 0;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid whitesmoke;
-    background-color: white;
+    border-bottom: 1px solid #22272E;
+    background-color: #22272E;
     z-index: 999;
     padding-right: 10px;
+}
+.emailList_settings  .MuiIconButton-label{
+    color: #9da7b38f;
+}
+.emailList_settings  .MuiIconButton-label:hover{
+    color: #9DA7B3;
 }
 .emailList_sections{
     position: sticky;
     top: 0;
     display: flex;
-    border-bottom: 1px solid whitesmoke;
-    background-color: white;
+    border-bottom: 1px solid #22272E;
+    background-color: #2D333B;
     z-index: 999;
 }
 .emailList_list{

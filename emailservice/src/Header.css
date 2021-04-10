@@ -1,28 +1,33 @@
 .header{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid whitesmoke;
+  background-color: #22272E;
+  border-bottom: 1px solid #2D333B;
 }
 .header_left{
     display: flex;
     align-items: center;
+    padding: 15px 5px;
+    background-color: #22272E;
+    width: 20vw;
+    box-sizing: border-box;
 }
-.header_left > img{
-    object-fit: contain;
-    height: 90px;
-    margin-left: 5px;
+.header_left > h1 {
+    color: #9DA7B3;
+}
+.header_left  .MuiSvgIcon-root {
+    color: #9DA7B3;
 }
 .header_middle{
     display: flex;
     flex: 0.7;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: #2D333B;
     padding: 10px;
     border-radius: 5px;
 }
 .header_middle > .MuiSvgIcon-root{
-    color: grey;
+    color:  #9DA7B3;
 }
 .header_middle > input{
     border: none;
@@ -31,8 +36,17 @@
     outline-width: 0;
     font-size: medium;
     background-color: transparent;
+    color:  #9DA7B3;
 }
 .header_right{
     display: flex;
+    align-items: center;
     padding-right: 20px;
+    margin-left: auto;
+}
+.header_right  .MuiSvgIcon-root {
+    color:  #9DA7B3;
+}
+.header_right > .MuiAvatar-root {
+    cursor: pointer;
 }

@@ -13,7 +13,8 @@
     justify-content: center;
 }
 .sidebar{
-    flex: 0.3;
-    max-width: 250px;
+    width: 20vw;
+    box-sizing: border-box;
     padding-right: 20px;
+    background-color: #22272E;
 }
