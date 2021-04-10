@@ -23,7 +23,8 @@
     position: sticky;
     top: 0;
     display: flex;
-    border-bottom: 1px solid #22272E;
+    border-top: 1px solid #2D333B;
+    border-bottom: 1px solid #22272E !important;
     background-color: #2D333B;
     z-index: 999;
 }
