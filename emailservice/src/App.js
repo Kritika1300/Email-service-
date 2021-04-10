@@ -14,23 +14,25 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { login, selectUser } from './features/userSlice';
+import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './firebase';
 function App() {
   const sendMessageIsOpen = useSelector(selectSendMessageIsOpen);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   useEffect(() => {
-      auth.onAuthStateChanged(user => {
-        if(user) {
-          dispatchEvent(login({
+    auth.onAuthStateChanged((user) => {
+      if(user) {
+        dispatch(login({
             displayName:user.displayName,
             email: user.email,
-            photoUrl: user.photoURL
-          }))
-        }
-      })
-  },[])
+            photoUrl: user.photoURL,
+        }))
+      } else {
+        dispatch(logout());
+      }
+    })
+  }, [dispatch]);
   return (
     <Router>
     {!user ? (

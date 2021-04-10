@@ -54,73 +54,7 @@ function EmailList() {
          time = {new Date(timestamp?.seconds * 1000).toUTCString()}
       />
     ))}
-    <EmailRow 
-      title = "Kritika"
-      subject = "Hey fellow streamer !!!!"
-      description = "This is a test mail"
-      time = "10pm"
-    />
-    <EmailRow 
-      title = "Kritika"
-      subject = "Hey fellow streamer !!!!"
-      description = "This is a test mail"
-      time = "10pm"
-    />
-    <EmailRow 
-      title = "Kritika"
-      subject = "Hey fellow streamer !!!!"
-      description = "This is a test mail"
-      time = "10pm"
-    />
-    <EmailRow 
-      title = "Kritika"
-      subject = "Hey fellow streamer !!!!"
-      description = "This is a test mail"
-      time = "10pm"
-    />
-    <EmailRow 
-      title = "Kritika"
-      subject = "Hey fellow streamer !!!!"
-      description = "This is a test mail"
-      time = "10pm"
-    />
-    <EmailRow 
-      title = "Kritika"
-      subject = "Hey fellow streamer !!!!"
-      description = "This is a test mail"
-      time = "10pm"
-    />
-    <EmailRow 
-      title = "Kritika"
-      subject = "Hey fellow streamer !!!!"
-      description = "This is a test mail"
-      time = "10pm"
-    />
-    <EmailRow 
-      title = "Kritika"
-      subject = "Hey fellow streamer !!!!"
-      description = "This is a test mail"
-      time = "10pm"
-    />
-    <EmailRow 
-      title = "Kritika"
-      subject = "Hey fellow streamer !!!!"
-      description = "This is a test mail"
-      time = "10pm"
-    />
-    <EmailRow 
-      title = "Kritika"
-      subject = "Hey fellow streamer !!!!"
-      description = "This is a test mail"
-      time = "10pm"
-    />
-    
-    <EmailRow 
-      title = "Himani Chaudhary"
-      subject = "Hey fellow streamer!!!!"
-      description = "This is a test mail"
-      time = "10pm"
-    />
+  
     </div>
     </div>
   );
