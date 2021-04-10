@@ -9,13 +9,20 @@
  border-width: 0 !important;
 }
 .section--selected{
-    background-color: whitesmoke;
+    background-color: #22272e98;
     border-width: 3px !important;
 }
 .section:hover{
-    background-color: whitesmoke;
+    background-color: #22272E;
     border-width: 3px !important;
 }
+.section:hover .blue {
+    color: #1A73E8;
+}
+.section:hover .green {
+    color: green;
+}
+
 .section > h4{
     font-size: 14px;
     margin-left: 15px;
