@@ -6,20 +6,28 @@
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     cursor: pointer;
-    color: gray;
+    color: #9DA7B3;
 }
 .sidebarOption:hover,
 .sidebarOption:hover > p,
-.sidebarOption:hover > h3,
+.sidebarOption:hover > h3 {
+    background-color: #2e3035;
+    color: tomato;
+}
 .sidebarOption--active,
 .sidebarOption--active > p,
 .sidebarOption--active > h3
 {
-    background-color: #fcecec;
-    color: #c04b37;
+    background-color: #2D333B;
+    color: tomato;
     font-weight: 800 !important;
 }
 .sidebarOption > .MuiSvgIcon-root{
+    color: #9da7b38f;
+    padding:5px;
+}
+.sidebarOption:hover > .MuiSvgIcon-root{
+    color: #9DA7B3;
     padding:5px;
 }
 .sidebarOption > p{
