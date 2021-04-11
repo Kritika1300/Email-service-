@@ -1,50 +1,63 @@
 .mail {
  flex: 1;
- background-color: whitesmoke;
+ background-color: #2D333B;
 }
 .mail_tools{
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    background-color:#22272E;
 }
 .mail_toolsLeft{
     display: flex;
 }
+.mail_tools .MuiIconButton-label{
+    color: #9da7b38f;
+}
+.mail_tools .MuiIconButton-label:hover{
+    color: #9DA7B3;
+}
 .mail_body{
     display: flex;
     flex-direction: column;
-    margin: 30px;
-    background-color: white;
-    padding: 20px;
+    margin: 3.5em 4em;
+    background-color: #22272E;
+    padding: 20px 30px;
     height: 100vh;
     box-shadow: 0px 5px 7px 0px rgba(0,0,0,0.24);
 }
+
 .mail_bodyHeader{
     display: flex;
     align-items: center;
-    border-bottom: 1px solid whitesmoke;
-    padding: 20px;
+    border-bottom: 1px solid #2D333B;
+    margin: 0px 30px;
+    padding: 20px 0px;
+    height: 59px;
     position: relative;
 }
 .mail_important{
     color: #e8ab02 !important;
 }
 .mail_bodyHeader > h2{
-    font-weight: 400;
+    font-weight: 600;
     margin-right: 20px;
+    color: #9DA7B3;
+    font-size: xx-large;
+    align-self: flex-start;
 }
 .mail_bodyHeader > p{
     margin-left: 20px;
+    color: #9DA7B3;
 }
 .mail_time{
-    position: absolute;
-    top: 24px;
-    right: 0;
+    margin-left: auto !important;
+    align-self: center;
     font-size: 12px;
-    color: gray;
+    color: #9DA7B3;
 }
 .mail_message > p{
-    padding: 10px;
+    padding: 20px 35px;
     margin-right: 20px;
     overflow-wrap: break-word;
+    color: #9DA7B3;
 }
