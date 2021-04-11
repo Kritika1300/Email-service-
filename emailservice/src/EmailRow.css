@@ -45,3 +45,9 @@
     font-weight: 400;
     color: gray;
 }
+.starred {
+    fill: gold !important;
+}
+.important{
+    color: goldenrod;
+}
