@@ -16,9 +16,14 @@ import PrintOutlinedIcon from '@material-ui/icons/PrintOutlined';
 import UnfoldMoreOutlinedIcon from '@material-ui/icons/UnfoldMoreOutlined';
 import { useSelector } from 'react-redux';
 import { selectOpenMail } from './features/mailSlice';
+import {db} from './firebase';
 function Mail() {
   const history = useHistory();
   const selectedMail = useSelector(selectOpenMail);
+  const deleteMail = () => {
+    db.collection("emails").doc(selectedMail.id).delete();
+    history.push("/");
+}
   return (
     <div className = "mail">
     <div className = "mail_tools">
@@ -33,7 +38,7 @@ function Mail() {
          <ErrorIcon />
        </IconButton>
        <IconButton >
-         <DeleteIcon />
+         <DeleteIcon onClick = {deleteMail}/>
        </IconButton>
        <IconButton >
          <EmailIcon />
@@ -66,7 +71,7 @@ function Mail() {
     <div className = "mail_body">
       <div className = "mail_bodyHeader">
         <h2>{selectedMail ?.subject}</h2>
-        <LabelImportantOutlinedIcon className = "mail_important"/>
+        { <LabelImportantOutlinedIcon className = { selectedMail?.important && "mail_important"}/> }
         <p>{selectedMail ?.title}</p>
         <p className = "mail_time">{selectedMail ?.time}</p>
       </div>
