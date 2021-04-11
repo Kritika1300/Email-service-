@@ -16,6 +16,8 @@ function SendMail() {
               to: formData.to,
               subject: formData.subject,
               message: formData.message,
+              starred: false,
+              important: false,
               timestamp:firebase.firestore.FieldValue.serverTimestamp()
           });
           dispatch(closeSendMessage());
