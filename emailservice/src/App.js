@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './Header'
 import Sidebar from './Sidebar'
@@ -20,6 +20,9 @@ function App() {
   const sendMessageIsOpen = useSelector(selectSendMessageIsOpen);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
+  const [selected, setSelected] = useState("inbox");
+  const [search, setSearch] = useState("");
+  
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if(user) {
@@ -38,12 +41,12 @@ function App() {
     {!user ? (
     <Login /> ):
     (<div className="app">
-    <Header />
+    <Header search = {search} setSearch = {setSearch} />
     <div className = "app_body">
-    <Sidebar />
+    <Sidebar  selected={selected} setSelected ={setSelected} />
     <Switch>
     <Route path = "/mail"><Mail /></Route>
-    <Route path = "/"><EmailList /></Route>
+    <Route path = "/"><EmailList search={search} selected={selected} /></Route>
     </Switch>
     </div>
     {sendMessageIsOpen && <SendMail />}

@@ -16,7 +16,8 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import { IconButton } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { openSendMessage } from './features/mailSlice';
-function Sidebar() {
+
+function Sidebar({setSelected, selected}) {
     const dispatch = useDispatch();
     return (
         <div className="sidebar">
@@ -26,10 +27,10 @@ function Sidebar() {
                 Compose
         </Button>
         <div className="sidebar__options">
-            <SidebarOption Icon={InboxIcon} title="Inbox" number={12} selected={true} />
-            <SidebarOption Icon={StarIcon} title="Starred"  />
+            <SidebarOption onClick={() => setSelected("inbox")} Icon={InboxIcon} title="Inbox" number={12} selected={selected === "inbox"} />
+            <SidebarOption onClick={() => setSelected("starred")} Icon={StarIcon} title="Starred" selected={selected === "starred"} />
             <SidebarOption Icon={AccessTimeIcon} title="Snoozed"  />
-            <SidebarOption Icon={LabelImportantIcon} title="Important"  />
+            <SidebarOption onClick={() => setSelected("important")} Icon={LabelImportantIcon} title="Important" selected={selected === "important"} />
             <SidebarOption Icon={NearMeIcon} title="Sent"  />
             <SidebarOption Icon={NoteIcon} title="Drafts"  />
             <SidebarOption Icon={ExpandMoreIcon} title="More"  />

@@ -9,7 +9,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout, selectUser, login } from './features/userSlice';
 import { auth } from './firebase';
-function Header() {
+function Header({search, setSearch}) {
     const user = useSelector(selectUser);
     const signOut = () => {
         auth.signOut();
@@ -22,7 +22,7 @@ function Header() {
             </div>
             <div className="header_middle">
                 <SearchIcon />
-                <input placeholder="Search mail" type="text" />
+                <input onChange={(e) => setSearch(e.target.value)} value = {search} placeholder="Search mail" type="text" />
                 <ArrowDropDownIcon className="header_inputCaret" />
             </div>
             <div className="header_right">
