@@ -1,6 +1,5 @@
 .emailList{
     flex: 1;
-    overflow: auto;
     background-color: #2D333B;
 }
 .emailList_settings{
@@ -28,11 +27,28 @@
     background-color: #2D333B;
     z-index: 999;
 }
-.emailList_list{
-    padding-bottom: 20%;
+.emailList_List{
+    padding-bottom: 5%;
 }
-/*Hide scroll bar*/
-.emailList{
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+.emailList_List {
+    height: 60vh !important;
+    overflow-y: auto;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 13px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #22272E;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #3e4755;
+    border-radius: 10px;
+    border: 3px solid #22272E;
+  }
