@@ -41,13 +41,6 @@ function EmailList({ selected, search }) {
     }
     
   }, [selected, emails]);
-
-  useEffect(() => {
-    setFilteredList(() => {
-
-    );
-  }, [search]);
-
   return (
     <div className="emailList">
       <div className="emailList_settings">
