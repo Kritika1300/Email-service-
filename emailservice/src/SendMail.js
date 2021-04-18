@@ -3,17 +3,23 @@ import './SendMail.css';
 import CloseIcon from '@material-ui/icons/Close';
 import { Button } from '@material-ui/core';
 import {useForm} from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {closeSendMessage} from './features/mailSlice';
 import {db} from './firebase';
 import firebase from 'firebase';
+import { selectUser } from './features/userSlice';
+
+
 function SendMail() {
     const {register,handleSubmit,watch,errors} = useForm();
     const dispatch = useDispatch();
+    const user = useSelector(selectUser);
+
     const onSubmit = (formData) => {
           console.log(formData);
           db.collection('emails').add({
               to: formData.to,
+              from: user.email,
               subject: formData.subject,
               message: formData.message,
               starred: false,
@@ -29,7 +35,7 @@ function SendMail() {
         <CloseIcon className = "sendMail_close" onClick = {() => dispatch(closeSendMessage())}/>
         </div>
         <form onSubmit = {handleSubmit(onSubmit)}>
-            <input name = "to" placeholder ="To" type = "text" ref = {register({ required : true})}/>
+            <input name = "to" placeholder ="To" type = "email" ref = {register({ required : true})}/>
              {errors.to && <p className = "sendMail_error">To is required!</p>}
             <input name = "subject" placeholder ="Subject"
             type = "text" ref = {register({required: true})}/>
