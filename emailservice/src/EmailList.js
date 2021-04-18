@@ -14,14 +14,25 @@ import PeopleIcon from '@material-ui/icons/People';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import EmailRow from './EmailRow';
 import { db } from './firebase';
+import { selectUser } from './features/userSlice';
+import { useSelector } from 'react-redux';
 
 function EmailList({ selected, search }) {
   const [emails, setEmails] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [displayList, setDisplayList] = useState([]);
+  const [sentList, setSentList] = useState([]);
+  const user = useSelector(selectUser);
 
   useEffect(() => {
-    db.collection('emails').orderBy('timestamp', 'desc').onSnapshot(snapshot => setEmails(snapshot.docs.map(doc => ({
+    db.collection('emails').where("to","==", user.email).orderBy('timestamp', 'desc').onSnapshot(snapshot => setEmails(snapshot.docs.map(doc => ({
+      id: doc.id,
+      data: doc.data(),
+    }))))
+  }, []);
+
+  useEffect(() => {
+    db.collection('emails').where("from","==", user.email).orderBy('timestamp', 'desc').onSnapshot(snapshot => setSentList(snapshot.docs.map(doc => ({
       id: doc.id,
       data: doc.data(),
     }))))
@@ -40,6 +51,9 @@ function EmailList({ selected, search }) {
       setFilteredList(emails.filter((email) => {
         return email.data.important;
       }));
+    }
+    else if(selected === "sent") {
+      setFilteredList(sentList);
     }
     
   }, [selected, emails]);
