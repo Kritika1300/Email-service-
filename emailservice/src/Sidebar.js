@@ -31,7 +31,7 @@ function Sidebar({setSelected, selected}) {
             <SidebarOption onClick={() => setSelected("starred")} Icon={StarIcon} title="Starred" selected={selected === "starred"} />
             <SidebarOption Icon={AccessTimeIcon} title="Snoozed"  />
             <SidebarOption onClick={() => setSelected("important")} Icon={LabelImportantIcon} title="Important" selected={selected === "important"} />
-            <SidebarOption Icon={NearMeIcon} title="Sent"  />
+            <SidebarOption onClick={() => setSelected("sent")} Icon={NearMeIcon} title="Sent" selected={selected === "sent"} />
             <SidebarOption Icon={NoteIcon} title="Drafts"  />
             <SidebarOption Icon={ExpandMoreIcon} title="More"  />
         </div>
