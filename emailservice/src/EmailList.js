@@ -18,6 +18,8 @@ import { db } from './firebase';
 function EmailList({ selected, search }) {
   const [emails, setEmails] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
+  const [displayList, setDisplayList] = useState([]);
+
   useEffect(() => {
     db.collection('emails').orderBy('timestamp', 'desc').onSnapshot(snapshot => setEmails(snapshot.docs.map(doc => ({
       id: doc.id,
@@ -37,10 +39,24 @@ function EmailList({ selected, search }) {
     else if(selected === "important") {
       setFilteredList(emails.filter((email) => {
         return email.data.important;
-      }))
+      }));
     }
     
   }, [selected, emails]);
+
+  useEffect(() => {
+    if(search === "") {
+      setDisplayList(filteredList);
+    }
+    else {
+      setDisplayList(filteredList.filter((email) => {
+        return email.data.subject.toLowerCase().includes(search.toLowerCase())
+        || email.data.message.toLowerCase().includes(search.toLowerCase())
+        || email.data.to.toLowerCase().includes(search.toLowerCase());
+      }));
+    }
+  }, [search, filteredList]);
+
   return (
     <div className="emailList">
       <div className="emailList_settings">
@@ -64,7 +80,7 @@ function EmailList({ selected, search }) {
         <Section Icon={LocalOfferIcon} title="Promotions" color="green" />
       </div>
       <div className="emailList_List">
-        {filteredList.map(({ id, data: { to, subject, message, timestamp, starred, important } }) => (
+        {displayList.map(({ id, data: { to, subject, message, timestamp, starred, important } }) => (
           <EmailRow
             id={id}
             key={id}
