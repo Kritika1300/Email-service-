@@ -8,12 +8,12 @@ import { selectMail } from './features/mailSlice';
 import { useDispatch } from 'react-redux';
 import {db} from './firebase';
 
-function EmailRow({ id, title, subject, description, time, starred, important }) {
+function EmailRow({ id, title, subject, description, time, starred, important, from }) {
   const history = useHistory();
   const dispatch = useDispatch();
   const openMail = () => {
     dispatch(selectMail({
-      id, title, subject, description, time, important
+      id, title, subject, description, time, important, from
     }));
     history.push("/mail")
   };
@@ -46,7 +46,7 @@ function EmailRow({ id, title, subject, description, time, starred, important })
       </IconButton>
     </div>
     <h3 onClick={openMail} className="emailRow_title">
-      {title}
+      {from}
     </h3>
     <div onClick={openMail} className="emailRow_message">
       <h4>{subject}{" "}

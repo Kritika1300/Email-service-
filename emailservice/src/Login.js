@@ -21,7 +21,7 @@ function Login() {
   return (
   <div className = "login">
     <div className = "login_container">
-      <img src = "https://cdn.vox-cdn.com/thumbor/Tbqi3ZF9Qz0fTJIUvkgQe3FdN0k=/1400x788/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/21939811/newgmaillogo.jpg" alt = "Login" />
+      <h1>GoMail</h1>
       <Button variant = "contained" color = "primary" onClick = {signIn}>Login</Button>
     </div>
   </div>

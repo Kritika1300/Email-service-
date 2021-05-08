@@ -94,10 +94,11 @@ function EmailList({ selected, search }) {
         <Section Icon={LocalOfferIcon} title="Promotions" color="green" />
       </div>
       <div className="emailList_List">
-        {displayList.map(({ id, data: { to, subject, message, timestamp, starred, important } }) => (
+        {displayList.map(({ id, data: { to, from, subject, message, timestamp, starred, important } }) => (
           <EmailRow
             id={id}
             key={id}
+            from={from}
             title={to}
             subject={subject}
             description={message}

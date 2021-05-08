@@ -13,3 +13,17 @@
     line-height: 1.6;
     word-spacing: 1px !important;
 }
+.transcript {
+    font-size: 1.6em;
+    padding: 5px;
+    position: absolute;
+    bottom: 20px;
+    margin: auto;
+    left: 15vw;
+    text-align: center;
+    background-color: #1516184b;
+    color: #9DA7B3;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 70vw;
+}

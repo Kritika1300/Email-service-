@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: column;
 }
-.login_container > img{
-    object-fit: contain;
-    height: 200px;
+.login_container > h1{
+    font-size: 5em;
 }

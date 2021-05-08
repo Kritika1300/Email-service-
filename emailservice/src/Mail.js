@@ -72,7 +72,7 @@ function Mail() {
       <div className = "mail_bodyHeader">
         <h2>{selectedMail ?.subject}</h2>
         { <LabelImportantOutlinedIcon className = { selectedMail?.important && "mail_important"}/> }
-        <p>{selectedMail ?.title}</p>
+        <p>{selectedMail ?.from}</p>
         <p className = "mail_time">{selectedMail ?.time}</p>
       </div>
       <div className = "mail_message">
