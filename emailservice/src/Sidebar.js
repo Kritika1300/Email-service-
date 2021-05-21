@@ -27,7 +27,7 @@ function Sidebar({setSelected, selected}) {
                 Compose
         </Button>
         <div className="sidebar__options">
-            <SidebarOption onClick={() => setSelected("inbox")} Icon={InboxIcon} title="Inbox" number={12} selected={selected === "inbox"} />
+            <SidebarOption onClick={() => setSelected("inbox")} Icon={InboxIcon} title="Inbox"  selected={selected === "inbox"} />
             <SidebarOption onClick={() => setSelected("starred")} Icon={StarIcon} title="Starred" selected={selected === "starred"} />
             <SidebarOption Icon={AccessTimeIcon} title="Snoozed"  />
             <SidebarOption onClick={() => setSelected("important")} Icon={LabelImportantIcon} title="Important" selected={selected === "important"} />

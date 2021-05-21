@@ -53,7 +53,7 @@ function App() {
       },
     },
     {
-      command: "clear",
+      command: "reset",
       callback: () => {
         console.log("clearing transcript");
         resetTranscript();
@@ -77,6 +77,22 @@ function App() {
         resetTranscript();
       },
     },
+    {
+      command: "search *",
+      callback: (term) => {
+        console.log("searching for",term);
+        setSearch(term);
+        resetTranscript();
+      },
+    },
+    {
+      command: "reset search",
+      callback: () => {
+        console.log("Resetting search");
+        setSearch("");
+        resetTranscript();
+      },
+    },
     ,
   ];
 
@@ -96,7 +112,7 @@ function App() {
             return newMicStatus;
         });
     }
-  
+
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if(user) {

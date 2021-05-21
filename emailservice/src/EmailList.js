@@ -56,7 +56,7 @@ function EmailList({ selected, search }) {
       setFilteredList(sentList);
     }
     
-  }, [selected, emails]);
+  }, [selected, emails, sentList]);
 
   useEffect(() => {
     if(search === "") {
@@ -94,12 +94,25 @@ function EmailList({ selected, search }) {
         <Section Icon={LocalOfferIcon} title="Promotions" color="green" />
       </div>
       <div className="emailList_List">
-        {displayList.map(({ id, data: { to, from, subject, message, timestamp, starred, important } }) => (
+        {selected !== "sent" && displayList.map(({ id, data: { to, from, subject, message, timestamp, starred, important } }) => (
           <EmailRow
             id={id}
             key={id}
             from={from}
             title={to}
+            subject={subject}
+            description={message}
+            time={new Date(timestamp?.seconds * 1000).toUTCString()}
+            starred={starred}
+            important={important}
+          />
+        ))}
+        {selected === "sent" && displayList.map(({ id, data: { to, from, subject, message, timestamp, starred, important } }) => (
+          <EmailRow
+            id={id}
+            key={id}
+            from={to}
+            title={from}
             subject={subject}
             description={message}
             time={new Date(timestamp?.seconds * 1000).toUTCString()}
