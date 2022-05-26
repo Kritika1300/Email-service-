@@ -1,0 +1,36 @@
+def GITHUB_REPO = "https://github.com/Kritika1300/Email-service-.git"
+def BRANCH = "master"
+
+pipeline {
+    agent any
+    stages {
+        stage("Code Checkout") {
+            steps {
+                script {
+                    checkout_obj =checkout([
+                            $class: 'GitSCM',
+                            branches: [[name: "${BRANCH}"]],
+                            doGenerateSubmoduleConfigurations: false,
+                            extensions: [[$class: 'WipeWorkspace']],
+                            submoduleCfg: [],
+                            userRemoteConfigs: [[url: "${GITHUB_REPO}"]]
+                    ])
+                }
+            }
+        }
+        stage("Build Docker Image"){
+            steps {
+                script {
+                    sh 'docker build -f Dockerfile -t gomail:latest .'
+                }
+            }
+        }
+        stage("Deploy Stage") {
+            steps {
+                script {
+                    sh "echo Deployed!!"
+                }
+            }
+        }
+    }
+}
