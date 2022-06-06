@@ -1,5 +1,5 @@
 def GITHUB_REPO = "https://github.com/Kritika1300/Email-service-.git"
-def BRANCH = "master"
+def BRANCH = "main"
 
 pipeline {
     agent any
@@ -21,14 +21,25 @@ pipeline {
         stage("Build Docker Image"){
             steps {
                 script {
-                    sh 'docker build -f Dockerfile -t gomail:latest .'
+                    sh ''' cd emailservice && \
+                     docker build -f Dockerfile -t gomail.azurecr.io/gomail:latest .
+                     '''
                 }
             }
         }
-        stage("Deploy Stage") {
+        stage("Push Image to ACR") {
             steps {
                 script {
-                    sh "echo Deployed!!"
+                    sh '''az login --service-principal --username <uname> --password <password> --tenant <tenant> && \
+                          az acr login --name gomail.azurecr.io && \
+                         docker push gomail.azurecr.io/gomail:latest'''
+                }
+            }
+        }
+        stage("Deploy Image to Container Apps") {
+            steps {
+                script {
+                    sh 'az containerapp update -n gomail -g gomail --image gomail.azurecr.io/gomail:latest'
                 }
             }
         }
